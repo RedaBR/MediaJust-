@@ -16,23 +16,14 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var KeyWords: UITextField!
     
-    var categories = ["general",
-                      "business",
-                      "entertainment",
-                      "health",
-                      "science",
-                      "sports",
-                      "technology"]
-    
-    
-    var countries = ["Belgique","France","Etats-Unis","Suéde","Suisse","Italie","Allemagne","Argentine"]
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+var viewModel = SearchViewModel()
     
 
 }
@@ -43,18 +34,18 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == categoriesPickerView {
-            return  categories.count
+            return  viewModel.categories.count
         } else if pickerView == countriesPickerView {
-            return countries.count
+            return viewModel.countries.count
         }
       return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == categoriesPickerView{
-            return categories[row]
+            return viewModel.categories[row]
         } else if pickerView == countriesPickerView {
-            return countries[row]
+            return viewModel.countries[row]
         }
             return ""
     }

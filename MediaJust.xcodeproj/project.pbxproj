@@ -16,6 +16,7 @@
 		9DA4779E2873AD76005790D1 /* MediaJustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4779D2873AD76005790D1 /* MediaJustTests.swift */; };
 		9DA477C32873AE6E005790D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477C22873AE6E005790D1 /* SearchViewController.swift */; };
 		9DA477CC2873AE94005790D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */; };
+		9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */; };
 		9DF2E4E82877854E00E11046 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2E4E72877854E00E11046 /* MediaService.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		9DA4779F2873AD76005790D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA477C22873AE6E005790D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9DF2E4E72877854E00E11046 /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +91,8 @@
 				9DA477852873AD6B005790D1 /* SceneDelegate.swift */,
 				9DF2E4E6287784D700E11046 /* Model */,
 				9DA477CF2873AEB4005790D1 /* View */,
-				9DA477C62873AE77005790D1 /* Controller */,
 				9DA4778F2873AD76005790D1 /* Assets.xcassets */,
+				9DA477892873AD6B005790D1 /* Main.storyboard */,
 				9DA477912873AD76005790D1 /* LaunchScreen.storyboard */,
 				9DA477942873AD76005790D1 /* Info.plist */,
 				9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */,
@@ -107,19 +109,12 @@
 			path = MediaJustTests;
 			sourceTree = "<group>";
 		};
-		9DA477C62873AE77005790D1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
-				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		9DA477CF2873AEB4005790D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9DA477892873AD6B005790D1 /* Main.storyboard */,
+				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
+				9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */,
+				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DA4778E2873AD6B005790D1 /* MediaJust.xcdatamodeld in Sources */,
+				9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */,
 				9DA477842873AD6B005790D1 /* AppDelegate.swift in Sources */,
 				9DF2E4E82877854E00E11046 /* MediaService.swift in Sources */,
 				9DA477C32873AE6E005790D1 /* SearchViewController.swift in Sources */,
