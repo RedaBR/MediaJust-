@@ -19,8 +19,14 @@ class SearchViewModel {
     
     var countries = ["Belgique","France","Etats-Unis","Suéde","Suisse","Italie","Allemagne","Argentine"]
     
-        func getResult (categories:String, countries:String, keyWords:String){
-            MediaService.shared.
+
+    func getResult (categories:String, countries:String, keyWords:String){
+            
+            MediaService.shared.getMedia(categories: categories, countries: countries, keyWords: keyWords) { (info, success, error) in
+                if success == false {
+                    SearchViewController().presentAlert(with: "z")
+                }
+            }
     }
     
 }

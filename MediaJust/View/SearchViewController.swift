@@ -25,6 +25,13 @@ class SearchViewController: UIViewController {
     
 var viewModel = SearchViewModel()
     
+    func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+
 
 }
 extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {

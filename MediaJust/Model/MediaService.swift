@@ -10,7 +10,7 @@ class MediaService {
     
     private init() {}
     
-    let shared = MediaService()
+    static let shared = MediaService()
     var session = URLSession()
     var task = URLSessionTask()
     
