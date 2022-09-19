@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D83A2DC28D9047900CB8BB1 /* MediaInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D83A2DB28D9047900CB8BB1 /* MediaInfos.swift */; };
 		9DA477842873AD6B005790D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477832873AD6B005790D1 /* AppDelegate.swift */; };
 		9DA477862873AD6B005790D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477852873AD6B005790D1 /* SceneDelegate.swift */; };
 		9DA4778B2873AD6B005790D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA477892873AD6B005790D1 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D83A2DB28D9047900CB8BB1 /* MediaInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfos.swift; sourceTree = "<group>"; };
 		9DA477802873AD6B005790D1 /* MediaJust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaJust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA477832873AD6B005790D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA477852873AD6B005790D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9DF2E4E72877854E00E11046 /* MediaService.swift */,
+				9D83A2DB28D9047900CB8BB1 /* MediaInfos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				9DA4778E2873AD6B005790D1 /* MediaJust.xcdatamodeld in Sources */,
 				9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */,
+				9D83A2DC28D9047900CB8BB1 /* MediaInfos.swift in Sources */,
 				9DA477842873AD6B005790D1 /* AppDelegate.swift in Sources */,
 				9DF2E4E82877854E00E11046 /* MediaService.swift in Sources */,
 				9DA477C32873AE6E005790D1 /* SearchViewController.swift in Sources */,
