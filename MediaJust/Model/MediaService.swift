@@ -21,14 +21,18 @@ class MediaService {
         let url = getUrl(categories: categories, countries: countries, keyWords: keyWords)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        task = session.dataTask(with: request, completionHandler: { (data, response, error) in
-            if let data = data, error != nil {
-                do { let responseJson = try JSONDecoder().decode(MediaInfos.self,from: data)
-                    callBack(responseJson,true,error as! Error)
-                    }
-                catch {callBack(nil,false,error)}
+        task = session.dataTask(with: request){ (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, error != nil {
+                    do { let responseJson = try JSONDecoder().decode(MediaInfos.self,from: data)
+                        callBack(responseJson,true,error as! Error)
+                        }
+                    catch {callBack(nil,false,error)}
+                } else { callBack(nil, false, error as! Error)}
             }
-        })
+                    }
+        task.resume()
+
   }
     
     func getUrl (categories:String, countries:String, keyWords:String)->URL {

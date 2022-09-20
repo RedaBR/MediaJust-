@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var categoriesPickerView: UIPickerView!
@@ -16,14 +16,28 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var KeyWords: UITextField!
     
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func searchButton(_ sender: UIButton) {
+        SearchViewModel().getResult(categories: categories, countries: countries, keyWords: KeyWords.text!)
+        
     }
     
-var viewModel = SearchViewModel()
+  
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        KeyWords.delegate = self
+
+    }
+    
+    var viewModel = SearchViewModel()
+    var categories = ""
+    var countries = ""
+
     
     func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
@@ -35,6 +49,7 @@ var viewModel = SearchViewModel()
 
 }
 extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -55,6 +70,17 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
             return viewModel.countries[row]
         }
             return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == categoriesPickerView{
+            let categorieText = viewModel.categories[row]
+           categories = categorieText
+        }
+        else if pickerView == countriesPickerView {
+            let countriesText = viewModel.countries[row]
+            countries = countriesText
+        }
     }
 }
 
