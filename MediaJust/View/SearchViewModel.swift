@@ -6,7 +6,15 @@
 //
 
 import Foundation
+
+protocol SearchViewDelegate : AnyObject {
+    func didReceivResult (infos:MediaInfos)
+    
+}
+
 class SearchViewModel {
+    
+    weak var delegate :SearchViewDelegate?
     
     var categories = ["general",
                       "business",
@@ -17,15 +25,22 @@ class SearchViewModel {
                       "technology"]
     
     
-    var countries = ["Belgique","France","Etats-Unis","Suéde","Suisse","Italie","Allemagne","Argentine"]
+    var countries = ["Belgique","France","us","Suéde","Suisse","Italie","Allemagne","Argentine"]
     
-
-    func getResult (categories:String, countries:String, keyWords:String){
-            MediaService.shared.getMedia(categories: categories, countries: countries, keyWords: keyWords) { (info, success, error) in
-                if success == false {
-                    SearchViewController().presentAlert(with: "z")
+    var categorySelected = ""
+    
+    var countrySelected = ""
+    
+    var keyWord = ""
+    
+    func getResult (){
+        MediaService.shared.getMedia(categories: categorySelected, countries:countrySelected, keyWords: keyWord) { [self] (info, success, error) in
+                if success  {
+                    delegate?.didReceivResult(infos: info!)
+                } else {
+                    
                 }
-            }
+        }
     }
     
 }

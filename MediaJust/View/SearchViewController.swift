@@ -17,8 +17,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var KeyWords: UITextField!
     
     @IBAction func searchButton(_ sender: UIButton) {
-        SearchViewModel().getResult(categories: categories, countries: countries, keyWords: KeyWords.text!)
-        
+        if let text = KeyWords.text {
+            viewModel.keyWord = text
+        }
+        viewModel.getResult()
     }
     
   
@@ -31,12 +33,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         KeyWords.delegate = self
+        viewModel.delegate = self
 
     }
     
     var viewModel = SearchViewModel()
-    var categories = ""
-    var countries = ""
+ 
 
     
     func presentAlert(with error: String) {
@@ -48,6 +50,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 
 
 }
+extension SearchViewController : SearchViewDelegate {
+    func didReceivResult(infos: MediaInfos) {
+        
+            self.presentAlert(with: "Found \(infos.data?.count) infos")
+        
+    }
+    
+    
+}
+
+
 extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -75,11 +88,11 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoriesPickerView{
             let categorieText = viewModel.categories[row]
-           categories = categorieText
+            viewModel.categorySelected = categorieText
         }
         else if pickerView == countriesPickerView {
             let countriesText = viewModel.countries[row]
-            countries = countriesText
+            viewModel.countrySelected = countriesText
         }
     }
 }
