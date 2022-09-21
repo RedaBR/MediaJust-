@@ -71,9 +71,11 @@
 		9DA477772873AD6B005790D1 = {
 			isa = PBXGroup;
 			children = (
+				ED898E8428DB36C200AA24FA /* Configurations */,
 				9DA477822873AD6B005790D1 /* MediaJust */,
 				9DA4779C2873AD76005790D1 /* MediaJustTests */,
 				9DA477812873AD6B005790D1 /* Products */,
+				ED898E8328DB369D00AA24FA /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,14 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				9DA477832873AD6B005790D1 /* AppDelegate.swift */,
+				9DF2E4E6287784D700E11046 /* Models */,
 				9DA477852873AD6B005790D1 /* SceneDelegate.swift */,
-				9DF2E4E6287784D700E11046 /* Model */,
-				9DA477CF2873AEB4005790D1 /* View */,
-				9DA4778F2873AD76005790D1 /* Assets.xcassets */,
-				9DA477892873AD6B005790D1 /* Main.storyboard */,
-				9DA477912873AD76005790D1 /* LaunchScreen.storyboard */,
-				9DA477942873AD76005790D1 /* Info.plist */,
-				9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */,
+				ED898E7F28DB365C00AA24FA /* Scenes */,
+				ED898E8128DB367500AA24FA /* Services */,
 			);
 			path = MediaJust;
 			sourceTree = "<group>";
@@ -111,23 +109,65 @@
 			path = MediaJustTests;
 			sourceTree = "<group>";
 		};
-		9DA477CF2873AEB4005790D1 /* View */ = {
+		9DF2E4E6287784D700E11046 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */,
+				9D83A2DB28D9047900CB8BB1 /* MediaInfos.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED898E7F28DB365C00AA24FA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED898E8228DB368400AA24FA /* Favorites */,
+				9DA477912873AD76005790D1 /* LaunchScreen.storyboard */,
+				9DA477892873AD6B005790D1 /* Main.storyboard */,
+				ED898E8028DB366200AA24FA /* Search */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED898E8028DB366200AA24FA /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
 				9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */,
-				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
 			);
-			path = View;
+			path = Search;
 			sourceTree = "<group>";
 		};
-		9DF2E4E6287784D700E11046 /* Model */ = {
+		ED898E8128DB367500AA24FA /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				9DF2E4E72877854E00E11046 /* MediaService.swift */,
-				9D83A2DB28D9047900CB8BB1 /* MediaInfos.swift */,
 			);
-			path = Model;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED898E8228DB368400AA24FA /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		ED898E8328DB369D00AA24FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DA4778F2873AD76005790D1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED898E8428DB36C200AA24FA /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				9DA477942873AD76005790D1 /* Info.plist */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,7 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MediaJust/Info.plist;
+				INFOPLIST_FILE = Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MediaJust/Info.plist;
+				INFOPLIST_FILE = Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
