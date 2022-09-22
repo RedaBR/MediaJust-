@@ -38,7 +38,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     var viewModel = SearchViewModel()
- 
+    var resultViewModel = ResultViewModel.shared
 
     
     func presentAlert(with error: String) {
@@ -52,11 +52,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 }
 extension SearchViewController : SearchViewDelegate {
     func didReceivResult(infos: MediaInfos) {
-        
-            self.presentAlert(with: "Found \(infos.data?.count) infos")
-        
+        DispatchQueue.main.async { [self] in
+            resultViewModel.clearList()
+            self.resultViewModel.addResult(result: infos)
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewID") as? ResultViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
-    
     
 }
 

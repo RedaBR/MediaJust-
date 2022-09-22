@@ -10,6 +10,7 @@ import Foundation
 protocol SearchViewDelegate : AnyObject {
     func didReceivResult (infos:MediaInfos)
     
+    
 }
 
 class SearchViewModel {
@@ -33,14 +34,20 @@ class SearchViewModel {
     
     var keyWord = ""
     
+    
+    
+    
+    
     func getResult (){
         MediaService.shared.getMedia(categories: categorySelected, countries:countrySelected, keyWords: keyWord) { [self] (info, success, error) in
                 if success  {
                     delegate?.didReceivResult(infos: info!)
+                    
                 } else {
                     
                 }
         }
     }
     
+   
 }
