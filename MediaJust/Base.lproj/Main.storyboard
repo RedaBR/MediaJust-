@@ -163,17 +163,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="173"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0W-8P-glv">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="173"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0W-8P-glv">
+                                                    <rect key="frame" x="20" y="86" width="133" height="76"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lf-Gf-vnk">
+                                                    <rect key="frame" x="46" y="11" width="348" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2lf-Gf-vnk" firstAttribute="trailing" secondItem="kA6-YW-j91" secondAttribute="trailingMargin" id="7YR-aH-sEH"/>
+                                                <constraint firstItem="2lf-Gf-vnk" firstAttribute="leading" secondItem="kA6-YW-j91" secondAttribute="leadingMargin" constant="26" id="j2k-t2-RsJ"/>
+                                                <constraint firstItem="2lf-Gf-vnk" firstAttribute="top" secondItem="kA6-YW-j91" secondAttribute="topMargin" id="yC8-mx-vU2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="author" destination="y0W-8P-glv" id="Vlo-AE-HmO"/>
+                                            <outlet property="title" destination="2lf-Gf-vnk" id="CAa-Q2-b60"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

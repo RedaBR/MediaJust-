@@ -17,11 +17,13 @@ class ResultViewModel {
     }
    func addResult (result:MediaInfos) {
     for i in result.data ?? []{
-        listResult.append(result)
+        
+            listResult.append(i)
+        
     }
         
     
        
     }
-    var listResult : [MediaInfos] = []
+    var listResult : [Datum] = []
 }

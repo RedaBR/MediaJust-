@@ -35,10 +35,9 @@ extension ResultViewController : UITableViewDataSource, UITableViewDelegate {
         
          let customCell = list?.dequeueReusableCell(withIdentifier: "CustomCellResult") as? CustomTableViewCell
         
-            let result = resultViewModel.listResult[indexPath.row]
-        
-        customCell!.customCell(info:result)
-            
+        let result = resultViewModel.listResult[indexPath.row]
+        customCell?.title.text = result.title
+
         cell = customCell!
         
         return cell
