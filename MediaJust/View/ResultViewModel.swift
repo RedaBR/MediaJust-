@@ -11,19 +11,21 @@ class ResultViewModel {
     
     private init() { }
     
+    var titleModel = ""
+    var urlModel = ""
+    
     static let shared = ResultViewModel()
     func clearList () {
         listResult.removeAll()
     }
    func addResult (result:MediaInfos) {
     for i in result.data ?? []{
-        
-            listResult.append(i)
-        
+        listResult.append(i)
     }
-        
     
-       
-    }
+   }
+    
+  
+    
     var listResult : [Datum] = []
 }

@@ -17,11 +17,9 @@ class ResultViewController: UIViewController {
         resultList.delegate = self
         resultList.dataSource = self
 
-      
     }
-    
+    var descript = DescriptionViewController()
     var resultViewModel = ResultViewModel.shared
-    
 }
 
 extension ResultViewController : UITableViewDataSource, UITableViewDelegate {
@@ -34,16 +32,21 @@ extension ResultViewController : UITableViewDataSource, UITableViewDelegate {
         var cell = UITableViewCell()
         
          let customCell = list?.dequeueReusableCell(withIdentifier: "CustomCellResult") as? CustomTableViewCell
-        
         let result = resultViewModel.listResult[indexPath.row]
         customCell?.title.text = result.title
-
         cell = customCell!
         
         return cell
     }
 
 
-
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let result = resultViewModel.listResult[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DescriptionID") as? DescriptionViewController
+        
+        vc?.properties.titleModel = result.title!
+        vc?.properties.urlModel = result.url!
+        self.navigationController!.pushViewController(vc!, animated: true)
+    }
 
 }
