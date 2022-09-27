@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -237,17 +238,32 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djb-JP-BY8">
+                                <rect key="frame" x="259" y="44" width="135" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonFav:" destination="u1n-Xp-A4K" eventType="touchUpInside" id="Uon-PT-MX3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="glD-Lh-DX8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QGX-Gi-cTH" firstAttribute="leading" secondItem="glD-Lh-DX8" secondAttribute="leading" id="6XR-RY-uoW"/>
+                            <constraint firstItem="Djb-JP-BY8" firstAttribute="leading" secondItem="glD-Lh-DX8" secondAttribute="leading" constant="259" id="9Tq-vk-v9b"/>
                             <constraint firstItem="Sye-9C-8Mp" firstAttribute="top" secondItem="glD-Lh-DX8" secondAttribute="top" constant="57" id="9Xr-rz-J28"/>
                             <constraint firstItem="glD-Lh-DX8" firstAttribute="bottom" secondItem="QGX-Gi-cTH" secondAttribute="bottom" id="DM8-8b-xxj"/>
                             <constraint firstItem="glD-Lh-DX8" firstAttribute="trailing" secondItem="Sye-9C-8Mp" secondAttribute="trailing" constant="20" id="EwS-oZ-08d"/>
+                            <constraint firstItem="glD-Lh-DX8" firstAttribute="trailing" secondItem="Djb-JP-BY8" secondAttribute="trailing" constant="20" id="Gyb-hO-0gw"/>
+                            <constraint firstItem="Djb-JP-BY8" firstAttribute="top" secondItem="glD-Lh-DX8" secondAttribute="top" id="OaB-k9-g1l"/>
                             <constraint firstItem="QGX-Gi-cTH" firstAttribute="top" secondItem="Sye-9C-8Mp" secondAttribute="bottom" constant="8" symbolic="YES" id="T7Z-T6-Jsy"/>
                             <constraint firstItem="Sye-9C-8Mp" firstAttribute="leading" secondItem="glD-Lh-DX8" secondAttribute="leading" constant="20" id="TfV-uM-O15"/>
                             <constraint firstItem="glD-Lh-DX8" firstAttribute="bottom" secondItem="Sye-9C-8Mp" secondAttribute="bottom" constant="630" id="reK-g6-jxt"/>
+                            <constraint firstItem="Sye-9C-8Mp" firstAttribute="top" secondItem="Djb-JP-BY8" secondAttribute="bottom" id="tit-aO-IYm"/>
                             <constraint firstItem="glD-Lh-DX8" firstAttribute="trailing" secondItem="QGX-Gi-cTH" secondAttribute="trailing" id="znn-g5-l65"/>
                         </constraints>
                     </view>
@@ -280,6 +296,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

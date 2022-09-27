@@ -14,6 +14,14 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
   
     @IBOutlet weak var webView: WKWebView!
     
+    
+    @IBAction func buttonFav(_ sender: UIButton) {
+        let article = Article(context: CoreDataStack.sharedInstance.viewContext)
+        article.url = properties.urlModel
+        article.title = properties.titleModel
+        
+    }
+    
     let properties = ResultViewModel.shared
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,34 +35,6 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
         let url = URL(string: properties.urlModel)
         let request = URLRequest(url: url!)
         webView.load(request)
+        
     }
-                
-                             // contents could not be loaded
-            
-            
-        
-            // the URL was bad!
-        
-        
-//        DispatchQueue.global(qos: .userInitiated).async {
-//
-//            let textData : NSData = NSData(contentsOf: textUrl)!
-//
-//        DispatchQueue.main.async {
-//
-//            let textResult = String(data: textData as Data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-//            self.text.text = textResult as String?
-//        }
-//        }
-            
-    
-
-//        DispatchQueue.global(qos: .userInitiated).async {
-//        let imageData: NSData = NSData(contentsOf: imageUrl)!
-//        // When from background thread, UI needs to be updated on main_queue
-//        DispatchQueue.main.async {
-//         let image = UIImage(data: imageData as Data)
-//           self.mainImg.image = image
-//    }
-//    }
 }
