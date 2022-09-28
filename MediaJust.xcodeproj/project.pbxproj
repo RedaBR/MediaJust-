@@ -26,6 +26,7 @@
 		9DEEDA9C28E38957000F636C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEDA9B28E38957000F636C /* CoreDataStack.swift */; };
 		9DEEDAA028E38BDC000F636C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEDA9F28E38BDC000F636C /* Article.swift */; };
 		9DF2E4E82877854E00E11046 /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2E4E72877854E00E11046 /* MediaService.swift */; };
+		9DF5A63128E39DB0006298CB /* CustomFavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF5A63028E39DB0006298CB /* CustomFavTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		9DEEDA9B28E38957000F636C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		9DEEDA9F28E38BDC000F636C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9DF2E4E72877854E00E11046 /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
+		9DF5A63028E39DB0006298CB /* CustomFavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFavTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
 				9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */,
 				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
+				9DF5A63028E39DB0006298CB /* CustomFavTableViewCell.swift */,
 				9DC6655428DC94CE0047D135 /* ResultViewController.swift */,
 				9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */,
 				9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */,
@@ -261,6 +264,7 @@
 			files = (
 				9DA4778E2873AD6B005790D1 /* MediaJust.xcdatamodeld in Sources */,
 				9DC6655928DC9E2B0047D135 /* ResultViewModel.swift in Sources */,
+				9DF5A63128E39DB0006298CB /* CustomFavTableViewCell.swift in Sources */,
 				9DC6655D28DCA1E20047D135 /* CustomTableViewCell.swift in Sources */,
 				9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */,
 				9D83A2DC28D9047900CB8BB1 /* MediaInfos.swift in Sources */,

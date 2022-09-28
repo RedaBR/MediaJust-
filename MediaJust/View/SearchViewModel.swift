@@ -26,7 +26,7 @@ class SearchViewModel {
                       "technology"]
     
     
-    var countries = ["Belgique","France","us","Suéde","Suisse","Italie","Allemagne","Argentine"]
+    var countries = ["be","fr","us","se","ch","it","de","ar","ma","gb"]
     
     var categorySelected = ""
     
@@ -40,14 +40,14 @@ class SearchViewModel {
     
     func getResult (){
         MediaService.shared.getMedia(categories: categorySelected, countries:countrySelected, keyWords: keyWord) { [self] (info, success, error) in
-                if success  {
-                    delegate?.didReceivResult(infos: info!)
-                    
-                } else {
-                    
-                }
+            if success  {
+                delegate?.didReceivResult(infos: info!)
+                
+            } else {
+                
+            }
         }
     }
     
-   
+    
 }

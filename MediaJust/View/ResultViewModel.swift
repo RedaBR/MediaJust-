@@ -25,7 +25,5 @@ class ResultViewModel {
     
    }
     
-  
-    
     var listResult : [Datum] = []
 }
