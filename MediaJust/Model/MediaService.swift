@@ -18,8 +18,8 @@ class MediaService {
     //    https://api.mediastack.com/v1/news?news&access_key=429ff5d9ffd8662bd2ed4fa813a07040&keywords=tennis&categories=business
     let baseUrl = "https://api.mediastack.com/v1/news?news&access_key=429ff5d9ffd8662bd2ed4fa813a07040"
     
-    func getMedia (categories:String,keyWords:String, callBack : @escaping (MediaInfos?,Bool,Error?)->Void) {
-        let url = getUrl(categories: categories, keyWords: keyWords)
+    func getMedia (categories:String, countries: String, keyWords:String, callBack : @escaping (MediaInfos?,Bool,Error?)->Void) {
+        let url = getUrl(categories: categories, countries: countries, keyWords: keyWords)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         session.dataTask(with: request){ (data, response, error) in
@@ -36,8 +36,8 @@ class MediaService {
         
     }
     
-    func getUrl (categories:String, keyWords:String)->URL {
-        let originalUrl = baseUrl + "&keywords=" + keyWords + "&categories=" + categories
+    func getUrl (categories:String, countries:String, keyWords:String)->URL {
+        let originalUrl = baseUrl + "&keywords=" + keyWords + "&countries=" + countries + "&categories=" + categories
         let urlString = originalUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let url = URL(string: urlString!)
         return url!
