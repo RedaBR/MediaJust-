@@ -11,7 +11,6 @@
 		9DA477842873AD6B005790D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477832873AD6B005790D1 /* AppDelegate.swift */; };
 		9DA477862873AD6B005790D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477852873AD6B005790D1 /* SceneDelegate.swift */; };
 		9DA4778B2873AD6B005790D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA477892873AD6B005790D1 /* Main.storyboard */; };
-		9DA4778E2873AD6B005790D1 /* MediaJust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */; };
 		9DA477902873AD76005790D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA4778F2873AD76005790D1 /* Assets.xcassets */; };
 		9DA477932873AD76005790D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA477912873AD76005790D1 /* LaunchScreen.storyboard */; };
 		9DA4779E2873AD76005790D1 /* MediaJustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4779D2873AD76005790D1 /* MediaJustTests.swift */; };
@@ -21,6 +20,7 @@
 		9DC6655528DC94CE0047D135 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6655428DC94CE0047D135 /* ResultViewController.swift */; };
 		9DC6655928DC9E2B0047D135 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */; };
 		9DC6655D28DCA1E20047D135 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */; };
+		9DDB538428E97D2D005E9DC2 /* FavDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB538328E97D2D005E9DC2 /* FavDescriptionViewController.swift */; };
 		9DE2096E28DF5BE600B53D70 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE2096D28DF5BE600B53D70 /* DescriptionViewController.swift */; };
 		9DEEDA9828E3888C000F636C /* MediaJust.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEDA9628E3888C000F636C /* MediaJust.xcdatamodeld */; };
 		9DEEDA9C28E38957000F636C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEEDA9B28E38957000F636C /* CoreDataStack.swift */; };
@@ -45,7 +45,6 @@
 		9DA477832873AD6B005790D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA477852873AD6B005790D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9DA4778A2873AD6B005790D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9DA4778D2873AD6B005790D1 /* MediaJust.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaJust.xcdatamodel; sourceTree = "<group>"; };
 		9DA4778F2873AD76005790D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DA477922873AD76005790D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DA477942873AD76005790D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		9DC6655428DC94CE0047D135 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		9DDB538328E97D2D005E9DC2 /* FavDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavDescriptionViewController.swift; sourceTree = "<group>"; };
 		9DE2096D28DF5BE600B53D70 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		9DEEDA9728E3888C000F636C /* MediaJust.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaJust.xcdatamodel; sourceTree = "<group>"; };
 		9DEEDA9B28E38957000F636C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 				9DA477892873AD6B005790D1 /* Main.storyboard */,
 				9DA477912873AD76005790D1 /* LaunchScreen.storyboard */,
 				9DA477942873AD76005790D1 /* Info.plist */,
-				9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */,
 			);
 			path = MediaJust;
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 				9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */,
 				9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */,
 				9DE2096D28DF5BE600B53D70 /* DescriptionViewController.swift */,
+				9DDB538328E97D2D005E9DC2 /* FavDescriptionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA4778E2873AD6B005790D1 /* MediaJust.xcdatamodeld in Sources */,
 				9DC6655928DC9E2B0047D135 /* ResultViewModel.swift in Sources */,
 				9DF5A63128E39DB0006298CB /* CustomFavTableViewCell.swift in Sources */,
+				9DDB538428E97D2D005E9DC2 /* FavDescriptionViewController.swift in Sources */,
 				9DC6655D28DCA1E20047D135 /* CustomTableViewCell.swift in Sources */,
 				9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */,
 				9D83A2DC28D9047900CB8BB1 /* MediaInfos.swift in Sources */,
@@ -546,16 +546,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9DA4778C2873AD6B005790D1 /* MediaJust.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9DA4778D2873AD6B005790D1 /* MediaJust.xcdatamodel */,
-			);
-			currentVersion = 9DA4778D2873AD6B005790D1 /* MediaJust.xcdatamodel */;
-			path = MediaJust.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		9DEEDA9628E3888C000F636C /* MediaJust.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

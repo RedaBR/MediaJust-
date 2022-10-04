@@ -9,6 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="8E2-8w-NEt">
+            <objects>
+                <navigationController id="aQv-dz-mG1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jYr-8a-vnB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MMZ-BB-B1j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="x7u-1s-3p3" kind="relationship" relationship="rootViewController" id="ITh-u9-Vov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3c-fn-Ete" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="358"/>
+        </scene>
         <!--Favorites-->
         <scene sceneID="8FY-QD-pJn">
             <objects>
@@ -49,13 +66,14 @@
                         <color key="backgroundColor" red="0.69869560259999997" green="0.96843161349999995" blue="0.99601085879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="euZ-hk-MOG"/>
+                    <navigationItem key="navigationItem" id="Znu-4m-nT9"/>
                     <connections>
                         <outlet property="favList" destination="dji-4c-w5Z" id="84t-SR-mWT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBx-p2-lgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.86956521739137" y="371.65178571428572"/>
+            <point key="canvasLocation" x="1857" y="358"/>
         </scene>
         <!--Item-->
         <scene sceneID="2sB-X6-I6f">
@@ -284,6 +302,55 @@
             </objects>
             <point key="canvasLocation" x="3686.9565217391305" y="-335.49107142857139"/>
         </scene>
+        <!--Fav Description View Controller-->
+        <scene sceneID="ha1-FI-FF3">
+            <objects>
+                <viewController storyboardIdentifier="FavListID" id="1Fy-2V-7y4" customClass="FavDescriptionViewController" customModule="MediaJust" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DX0-q4-i8E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJg-Fb-7Ae">
+                                <rect key="frame" x="0.0" y="98" width="414" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-mO-76N">
+                                <rect key="frame" x="0.0" y="227" width="414" height="635"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCV-Jr-MdA">
+                                <rect key="frame" x="313" y="98" width="81" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="delete.right" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteFav:" destination="1Fy-2V-7y4" eventType="touchUpInside" id="aje-99-0e4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wo3-Ow-aAM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleFavDescript" destination="BJg-Fb-7Ae" id="AOX-vW-of6"/>
+                        <outlet property="webViewFavDescript" destination="h9l-mO-76N" id="yiY-i3-Xkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Sk-L4-OG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737.68115942029" y="357.58928571428572"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ti1-8q-8yW">
             <objects>
@@ -295,7 +362,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="I8f-wl-VbI" kind="relationship" relationship="viewControllers" id="8Wh-sS-za9"/>
-                        <segue destination="x7u-1s-3p3" kind="relationship" relationship="viewControllers" id="VsG-4v-DlZ"/>
+                        <segue destination="aQv-dz-mG1" kind="relationship" relationship="viewControllers" id="g7H-s7-gEA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlT-ek-60l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -304,6 +371,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete.right" catalog="system" width="128" height="104"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -39,10 +39,10 @@ class CoreDataStack {
             completion([])
         }
     }
-    func getPropertieWithTitle(uri: String, completion: ([Article]) -> Void) {
+    func getPropertieWithTitle(title: String, completion: ([Article]) -> Void) {
         let request: NSFetchRequest<Article> = Article.fetchRequest()
        
-        request.predicate = NSPredicate(format: "uri == %@", uri )
+        request.predicate = NSPredicate(format: "title == %@", title )
         do {
             let properties = try CoreDataStack.sharedInstance.viewContext.fetch(request)
             try CoreDataStack.sharedInstance.viewContext.save()
@@ -51,10 +51,10 @@ class CoreDataStack {
             completion([])
         }
     }
-    func delete (recipeToDelete: NSManagedObject) {
+    func delete (articleToDelete: NSManagedObject) {
         let request: NSFetchRequest<Article> = Article.fetchRequest()
         do {
-            let properties = try CoreDataStack.sharedInstance.viewContext.delete(recipeToDelete)
+            let properties = try CoreDataStack.sharedInstance.viewContext.delete(articleToDelete)
             try CoreDataStack.sharedInstance.viewContext.save()
         } catch {
         }

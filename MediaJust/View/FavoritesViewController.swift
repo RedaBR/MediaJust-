@@ -18,12 +18,14 @@ class FavoritesViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         backUpList.removeAll()
         getFetch()
     }
     
     var backUpList : [Article] = []
+    var resultViewModel = ResultViewModel.shared
     
     func getFetch () {
         CoreDataStack.sharedInstance.getProperties { (savedProperties) in
@@ -49,7 +51,12 @@ extension FavoritesViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
         
     }
-    
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let result = backUpList[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FavListID") as?FavDescriptionViewController
+        
+        vc?.properties.titleModel = result.title!
+        vc?.properties.urlModel = result.url!
+        self.navigationController!.pushViewController(vc!, animated: true)
+    }
 }
