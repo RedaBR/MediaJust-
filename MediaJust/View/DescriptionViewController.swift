@@ -14,6 +14,7 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
   
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var viewTitle: UIView!
     
     @IBAction func buttonFav(_ sender: UIButton) {
         let article = Article(context: CoreDataStack.sharedInstance.viewContext)
@@ -36,5 +37,16 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
         let request = URLRequest(url: url!)
         webView.load(request)
         
+        viewTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+
+        viewTitle.layer.shadowRadius = 2.0
+
+        viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+        viewTitle.layer.shadowOpacity = 2.0
+        
+        
     }
+    
+    
 }

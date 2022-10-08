@@ -11,12 +11,14 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var resultList: UITableView!
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         resultList.delegate = self
         resultList.dataSource = self
-        
+        resultList.separatorStyle = .none
     }
     var descript = DescriptionViewController()
     var resultViewModel = ResultViewModel.shared
