@@ -26,7 +26,7 @@ class SearchViewModel {
                       "technology"]
     
     
-    var languages = ["be","fr","us","se","ch","it","de","ar","ma","gb"]
+    var languages = ["fr","en","es","pt","it","de","ar"]
     
     var categorySelected = ""
     

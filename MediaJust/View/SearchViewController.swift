@@ -13,9 +13,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var categoriesPickerView: UIPickerView!
     
    
-   
     @IBOutlet weak var languagesPickerView: UIPickerView!
     
+    @IBOutlet weak var viewTitle: UIView!
+    
+    @IBOutlet weak var viewCategoriesTitle: UIView!
+    
+    
+    @IBOutlet weak var viewLanguagesTitle: UIView!
+    
+    
+    @IBOutlet weak var viewKeyTitle: UIView!
     
     @IBOutlet weak var KeyWords: UITextField!
     
@@ -37,7 +45,46 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         KeyWords.delegate = self
         viewModel.delegate = self
+        
+        viewTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
 
+         viewTitle.layer.shadowRadius = 2.0
+
+         viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+         viewTitle.layer.shadowOpacity = 2.0
+
+        
+        
+        
+        viewCategoriesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+
+        viewCategoriesTitle.layer.shadowRadius = 2.0
+
+        viewCategoriesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+        viewCategoriesTitle.layer.shadowOpacity = 2.0
+        
+        
+
+        viewLanguagesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+
+        viewLanguagesTitle.layer.shadowRadius = 2.0
+
+        viewLanguagesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+        viewLanguagesTitle.layer.shadowOpacity = 2.0
+        
+        
+        viewKeyTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+
+        viewKeyTitle.layer.shadowRadius = 2.0
+
+        viewKeyTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+
+        viewKeyTitle.layer.shadowOpacity = 2.0
+        
+        
     }
     
     var viewModel = SearchViewModel()
