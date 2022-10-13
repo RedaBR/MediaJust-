@@ -34,10 +34,6 @@ class SearchViewModel {
     
     var keyWord = ""
     
-    
-    
-    
-    
     func getResult (){
         MediaService.shared.getMedia(categories: categorySelected, languages: languageSelected,keyWords: keyWord) { [self] (info, success, error) in
             if success  {

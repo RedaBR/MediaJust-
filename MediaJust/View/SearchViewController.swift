@@ -8,11 +8,11 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
-
+    
     
     @IBOutlet weak var categoriesPickerView: UIPickerView!
     
-   
+    
     @IBOutlet weak var languagesPickerView: UIPickerView!
     
     @IBOutlet weak var viewTitle: UIView!
@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         viewModel.getResult()
     }
     
-  
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -47,41 +47,41 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         viewModel.delegate = self
         
         viewTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-
-         viewTitle.layer.shadowRadius = 2.0
-
-         viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-
-         viewTitle.layer.shadowOpacity = 2.0
-
+        
+        viewTitle.layer.shadowRadius = 2.0
+        
+        viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        
+        viewTitle.layer.shadowOpacity = 2.0
+        
         
         
         
         viewCategoriesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-
+        
         viewCategoriesTitle.layer.shadowRadius = 2.0
-
+        
         viewCategoriesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-
+        
         viewCategoriesTitle.layer.shadowOpacity = 2.0
         
         
-
+        
         viewLanguagesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-
+        
         viewLanguagesTitle.layer.shadowRadius = 2.0
-
+        
         viewLanguagesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-
+        
         viewLanguagesTitle.layer.shadowOpacity = 2.0
         
         
         viewKeyTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-
+        
         viewKeyTitle.layer.shadowRadius = 2.0
-
+        
         viewKeyTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-
+        
         viewKeyTitle.layer.shadowOpacity = 2.0
         
         
@@ -89,7 +89,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel = SearchViewModel()
     var resultViewModel = ResultViewModel.shared
-
+    
     
     func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
@@ -97,8 +97,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-
-
+    
+    
 }
 extension SearchViewController : SearchViewDelegate {
     func didReceivResult(infos: MediaInfos) {
@@ -128,7 +128,7 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
             return viewModel.languages.count
         }
         return 0
-
+        
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == categoriesPickerView{
@@ -136,7 +136,7 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
         }else if pickerView == languagesPickerView {
             return viewModel.languages[row]
         }
-            return ""
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -147,10 +147,10 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
             let languagesText = viewModel.languages[row]
             viewModel.languageSelected = languagesText
         }
-       
+        
     }
-
-
+    
+    
 }
 
 
