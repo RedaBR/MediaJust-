@@ -6,28 +6,61 @@
 //
 
 import XCTest
+
 @testable import MediaJust
 
 class MediaJustTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetMediaShouldPostFailedCallbackIfError() {
+        // Given
+        let media = MediaService(session:URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
+        // When
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            XCTAssertFalse(success)
+            XCTAssertNil(data)
         }
     }
-
+    
+    func testGetMediaShouldPostFailedCallbackIfNoData() {
+        
+        let media = MediaService(session: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            XCTAssertNil(data)
+            XCTAssertFalse(success)
+            XCTAssertNil(error)
+        }
+        
+    }
+    
+    func testGetMediaShouldPostFailedCallbackIfIncorrectResponse() {
+        let media = MediaService(session: URLSessionFake(data: FakeResponseData().correctMediaData, response: FakeResponseData().responseKO, error: nil))
+        
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            XCTAssertNotNil(data)
+            XCTAssertTrue(success)
+        }
+    }
+    
+    func testGetMediaShouldPostFailedCallbackIfIncorrectData() {
+        
+        let media = MediaService(session: URLSessionFake(data: FakeResponseData().incorrectData, response: FakeResponseData().responseOK, error: nil))
+        
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            XCTAssertNil(data)
+            XCTAssertFalse(success)
+        }
+    }
+    
+    func testMediaShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+        
+        let media = MediaService(session: URLSessionFake(data: FakeResponseData().correctMediaData, response: FakeResponseData().responseOK, error: nil))
+        
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            XCTAssertNotNil(data)
+            XCTAssertTrue(success)
+        }
+        
+    }
+    
 }

@@ -14,7 +14,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
    
    
-    @IBOutlet weak var countriesPickerView: UIPickerView!
+    @IBOutlet weak var languagesPickerView: UIPickerView!
+    
     
     @IBOutlet weak var KeyWords: UITextField!
     
@@ -76,8 +77,8 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == categoriesPickerView {
             return  viewModel.categories.count
-        }else if pickerView == countriesPickerView {
-            return viewModel.countries.count
+        }else if pickerView == languagesPickerView {
+            return viewModel.languages.count
         }
         return 0
 
@@ -85,8 +86,8 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == categoriesPickerView{
             return viewModel.categories[row]
-        }else if pickerView == countriesPickerView {
-            return viewModel.countries[row]
+        }else if pickerView == languagesPickerView {
+            return viewModel.languages[row]
         }
             return ""
     }
@@ -95,6 +96,9 @@ extension SearchViewController : UIPickerViewDataSource,UIPickerViewDelegate {
         if pickerView == categoriesPickerView{
             let categorieText = viewModel.categories[row]
             viewModel.categorySelected = categorieText
+        } else if pickerView == languagesPickerView {
+            let languagesText = viewModel.languages[row]
+            viewModel.languageSelected = languagesText
         }
        
     }
