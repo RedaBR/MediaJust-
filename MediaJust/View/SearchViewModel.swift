@@ -7,15 +7,14 @@
 
 import Foundation
 
-protocol SearchViewDelegate : AnyObject {
-    func didReceivResult (infos:MediaInfos)
-    
+protocol SearchViewDelegate: AnyObject {
+    func didReceivResult (infos: MediaInfos)
     
 }
 
 class SearchViewModel {
     
-    weak var delegate :SearchViewDelegate?
+    weak var delegate: SearchViewDelegate?
     
     var categories = ["general",
                       "business",
@@ -24,7 +23,6 @@ class SearchViewModel {
                       "science",
                       "sports",
                       "technology"]
-    
     
     var languages = ["fr","en","es","pt","it","de","ar"]
     

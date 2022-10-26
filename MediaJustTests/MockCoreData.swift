@@ -10,33 +10,30 @@ import CoreData
 @testable import MediaJust
 
 class MockCoreData {
-    
-    lazy var lazyManagedObjectContext : NSManagedObjectContext = {
-        
+    lazy var lazyManagedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
         let context = NSManagedObjectContext()
         context.persistentStoreCoordinator = coordinator
         return context
-
-    }()
     
-    lazy var lazyManagedObjectModel : NSManagedObjectModel = {
+    }()
+    lazy var lazyManagedObjectModel: NSManagedObjectModel = {
         let managedObjecModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])
         return managedObjecModel!
     }()
-    
-    lazy var persistentStoreCoordinator : NSPersistentStoreCoordinator = {
-        var coordinator : NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel:lazyManagedObjectModel)
+    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+var coordinator: NSPersistentStoreCoordinator? =
+    NSPersistentStoreCoordinator(managedObjectModel: lazyManagedObjectModel)
         do {// sava in memory
-            try coordinator!.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
+            try coordinator!.addPersistentStore(ofType: NSInMemoryStoreType,
+            configurationName: nil, at: nil, options: nil)
         } catch {
             coordinator = nil
             print("Error")
         }
         return coordinator!
     }()
-    
-    var managedObjectContext : NSManagedObjectContext {
+    var managedObjectContext: NSManagedObjectContext {
         return lazyManagedObjectContext
     }
 }

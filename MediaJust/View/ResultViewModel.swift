@@ -8,8 +8,8 @@
 import Foundation
 
 class ResultViewModel {
-    
-    private init() { }
+
+    private init() {}
     
     var titleModel = ""
     var urlModel = ""
@@ -18,12 +18,12 @@ class ResultViewModel {
     func clearList () {
         listResult.removeAll()
     }
-   func addResult (result:MediaInfos) {
-    for i in result.data ?? []{
-        listResult.append(i)
+    func addResult (result: MediaInfos) {
+    for properties in result.data ?? [] {
+    listResult.append(properties)
     }
     
    }
     
-    var listResult : [Datum] = []
+    var listResult: [Datum] = []
 }

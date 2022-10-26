@@ -1,0 +1,6 @@
+framework module Pods_MediaJust {
+  umbrella header "Pods-MediaJust-umbrella.h"
+
+  export *
+  module * { export * }
+}

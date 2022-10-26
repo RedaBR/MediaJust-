@@ -10,33 +10,29 @@ import XCTest
 @testable import MediaJust
 
 class MediaJustTests: XCTestCase {
-
+    
     func testGetMediaShouldPostFailedCallbackIfError() {
         // Given
         let media = MediaService(session:URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
         // When
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
             XCTAssertFalse(success)
             XCTAssertNil(data)
         }
     }
-    
     func testGetMediaShouldPostFailedCallbackIfNoData() {
-        
         let media = MediaService(session: URLSessionFake(data: nil, response: nil, error: nil))
-        
         media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
             XCTAssertNil(data)
             XCTAssertFalse(success)
             XCTAssertNil(error)
         }
-        
     }
-    
     func testGetMediaShouldPostFailedCallbackIfIncorrectResponse() {
-        let media = MediaService(session: URLSessionFake(data: FakeResponseData().correctMediaData, response: FakeResponseData().responseKO, error: nil))
-        
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+        let media = MediaService(session:
+                                    URLSessionFake(data: FakeResponseData().correctMediaData,
+                                                   response: FakeResponseData().responseKO, error: nil))
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
             XCTAssertNotNil(data)
             XCTAssertTrue(success)
         }
@@ -46,7 +42,7 @@ class MediaJustTests: XCTestCase {
         
         let media = MediaService(session: URLSessionFake(data: FakeResponseData().incorrectData, response: FakeResponseData().responseOK, error: nil))
         
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
             XCTAssertNil(data)
             XCTAssertFalse(success)
         }
@@ -55,12 +51,9 @@ class MediaJustTests: XCTestCase {
     func testMediaShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         
         let media = MediaService(session: URLSessionFake(data: FakeResponseData().correctMediaData, response: FakeResponseData().responseOK, error: nil))
-        
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
             XCTAssertNotNil(data)
             XCTAssertTrue(success)
         }
-        
     }
-    
 }
