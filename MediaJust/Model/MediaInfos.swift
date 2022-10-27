@@ -1,14 +1,12 @@
-
 import Foundation
-
 // MARK: - Media
-struct MediaInfos:Codable {
+struct MediaInfos: Codable {
     let pagination: Pagination?
     let data: [Datum]?
 }
 
 // MARK: - Datum
-struct Datum :Codable{
+struct Datum: Codable {
     let author: String?
     let title, datumDescription: String?
     let url: String?
@@ -17,6 +15,6 @@ struct Datum :Codable{
 }
 
 // MARK: - Pagination
-struct Pagination:Codable {
+struct Pagination: Codable {
     let limit, offset, count, total: Int?
 }

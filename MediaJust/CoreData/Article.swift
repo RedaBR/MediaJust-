@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreData
-
-class Article : NSManagedObject {
+// MARK: - Managment properties and method of CoreData 
+class Article: NSManagedObject {
 
 }

@@ -10,5 +10,4 @@ import UIKit
 class CustomFavTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    
 }
