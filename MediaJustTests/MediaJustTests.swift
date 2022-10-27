@@ -12,11 +12,14 @@ class MediaJustTests: XCTestCase {
     func testGetMediaShouldPostFailedCallbackIfError() {
         // Given
         let media = MediaService(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
+        let searchModel = SearchViewModel()
         // When
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
+        searchModel.getResult()
+            media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
         // Then
             XCTAssertFalse(success)
             XCTAssertNil(data)
+            XCTAssertNotNil(error)
         }
     }
     func testGetMediaShouldPostFailedCallbackIfNoData() {
@@ -54,10 +57,16 @@ let media = MediaService(session: URLSessionFake(data: FakeResponseData().incorr
         // Given
 let media = MediaService(session: URLSessionFake(data: FakeResponseData().correctMediaData, response: FakeResponseData().responseOK, error: nil))
         // When
-        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, _) in
+        media.getMedia(categories: "general", languages: "fr", keyWords: "") { (data, success, error) in
+            let resultModel = ResultViewModel.shared
+            resultModel.addResult(result: data!)
         // Then
+            XCTAssertTrue(resultModel.listResult.count == 1)
             XCTAssertNotNil(data)
             XCTAssertTrue(success)
+            XCTAssertNil(error)
         }
     }
+    
+
 }
