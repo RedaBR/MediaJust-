@@ -16,6 +16,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewLanguagesTitle: UIView!
     @IBOutlet weak var viewKeyTitle: UIView!
     @IBOutlet weak var keyWords: UITextField!
+    @IBOutlet weak var viewCategories: UIView!
+    
+    @IBOutlet weak var viewLanguages: UIView!
     @IBAction func searchButton(_ sender: UIButton) {
         if let text = keyWords.text {
             viewModel.keyWord = text
@@ -48,6 +51,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         viewKeyTitle.layer.shadowRadius = 2.0
         viewKeyTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         viewKeyTitle.layer.shadowOpacity = 2.0
+        viewCategories.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+        viewCategories.layer.shadowRadius = 2.0
+        viewCategories.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        viewCategories.layer.shadowOpacity = 2.0
+        viewLanguages.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+        viewLanguages.layer.shadowRadius = 2.0
+        viewLanguages.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        viewLanguages.layer.shadowOpacity = 2.0
     }
     var viewModel = SearchViewModel()
     var resultViewModel = ResultViewModel.shared
