@@ -23,6 +23,8 @@ class SearchViewModel {
                       "sports",
                       "technology"]
     var languages = ["fr", "en", "es", "pt", "it", "de", "ar"]
+    
+    var displayLanguage = ["fr":"French", "en":"English", "es":"Espagnol", "pt":"Portugues", "it":"Italian", "de":"Deutsch", "ar":"Arabe"]
     var categorySelected = ""
     var languageSelected = ""
     var keyWord = ""

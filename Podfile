@@ -8,5 +8,6 @@ target 'MediaJust' do
   # Pods for MediaJust
 
 	pod 'SwiftLint'
+	pod 'R.swift'
 
 end

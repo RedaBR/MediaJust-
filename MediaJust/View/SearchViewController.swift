@@ -9,14 +9,13 @@ import UIKit
 // MARK: - Search
 class SearchViewController: UIViewController, UITextFieldDelegate {
 // Outlets
+    
+    @IBOutlet weak var categoriesTitle: UILabel!
     @IBOutlet weak var categoriesPickerView: UIPickerView!
     @IBOutlet weak var languagesPickerView: UIPickerView!
-    @IBOutlet weak var viewTitle: UIView!
-    @IBOutlet weak var viewCategoriesTitle: UIView!
-    @IBOutlet weak var viewLanguagesTitle: UIView!
-    @IBOutlet weak var viewKeyTitle: UIView!
+
     @IBOutlet weak var keyWords: UITextField!
-    @IBOutlet weak var viewCategories: UIView!
+   
     
     @IBOutlet weak var viewLanguages: UIView!
     @IBAction func searchButton(_ sender: UIButton) {
@@ -31,34 +30,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     override func viewDidLoad() {
+        categoriesTitle.text = R.string.localizable.categories()
         super.viewDidLoad()
         keyWords.delegate = self
         viewModel.delegate = self
-// Customize views with shadows
-        viewTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewTitle.layer.shadowRadius = 2.0
-        viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewTitle.layer.shadowOpacity = 2.0
-        viewCategoriesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewCategoriesTitle.layer.shadowRadius = 2.0
-        viewCategoriesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewCategoriesTitle.layer.shadowOpacity = 2.0
-        viewLanguagesTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewLanguagesTitle.layer.shadowRadius = 2.0
-        viewLanguagesTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewLanguagesTitle.layer.shadowOpacity = 2.0
-        viewKeyTitle.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewKeyTitle.layer.shadowRadius = 2.0
-        viewKeyTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewKeyTitle.layer.shadowOpacity = 2.0
-        viewCategories.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewCategories.layer.shadowRadius = 2.0
-        viewCategories.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewCategories.layer.shadowOpacity = 2.0
-        viewLanguages.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-        viewLanguages.layer.shadowRadius = 2.0
-        viewLanguages.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        viewLanguages.layer.shadowOpacity = 2.0
+
     }
     var viewModel = SearchViewModel()
     var resultViewModel = ResultViewModel.shared
@@ -102,7 +78,8 @@ extension SearchViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             return viewModel.categories[row]
         }
         else if pickerView == languagesPickerView {
-            return viewModel.languages[row]
+            let language = viewModel.languages[row]
+            return viewModel.displayLanguage[language]
         }
         return ""
     }
