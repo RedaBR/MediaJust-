@@ -23,14 +23,13 @@ class SearchViewModel {
                       "sports",
                       "technology"]
     var languages = ["fr", "en", "es", "pt", "it", "de", "ar"]
-    
-    var displayLanguage = ["fr":"French", "en":"English", "es":"Espagnol", "pt":"Portugues", "it":"Italian", "de":"Deutsch", "ar":"Arabe"]
+    var displayLanguage = ["fr": "French", "en": "English", "es": "Espagnol", "pt": "Portugues", "it": "Italian", "de": "Deutsch", "ar": "Arabe"]
     var categorySelected = ""
     var languageSelected = ""
     var keyWord = ""
 //    function for call network and if success call a method of protocol
     func getResult () {
-        MediaService.shared.getMedia(categories: categorySelected, languages: languageSelected, keyWords: keyWord) { [self] (info, success, error) in
+        MediaService.shared.getMedia(categories: categorySelected, languages: languageSelected, keyWords: keyWord) { [self] (info, success, _) in
             if success {
                 delegate?.didReceivResult(infos: info!)
             } else {

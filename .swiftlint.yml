@@ -1,5 +1,10 @@
 
 # By default, SwiftLint uses a set of sensible default rules you can adjust:
 disabled_rules: # rule identifiers turned on by default to exclude from running
- -line_length
- -type_name
+ - line_length
+ - type_name
+ - opening_brace
+ - colon
+ - generic_type_name
+ - unused_closure_parameter
+ - nesting

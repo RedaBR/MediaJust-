@@ -9,14 +9,12 @@ import UIKit
 // MARK: - Search
 class SearchViewController: UIViewController, UITextFieldDelegate {
 // Outlets
-    
     @IBOutlet weak var categoriesTitle: UILabel!
+    @IBOutlet weak var languagesTitle: UILabel!
     @IBOutlet weak var categoriesPickerView: UIPickerView!
     @IBOutlet weak var languagesPickerView: UIPickerView!
 
     @IBOutlet weak var keyWords: UITextField!
-   
-    
     @IBOutlet weak var viewLanguages: UIView!
     @IBAction func searchButton(_ sender: UIButton) {
         if let text = keyWords.text {
@@ -31,6 +29,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         categoriesTitle.text = R.string.localizable.categories()
+        languagesTitle.text = R.string.localizable.languages()
         super.viewDidLoad()
         keyWords.delegate = self
         viewModel.delegate = self
@@ -74,11 +73,7 @@ extension SearchViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == categoriesPickerView {
-            return viewModel.categories[row]
-        }
-        else if pickerView == languagesPickerView {
-            let language = viewModel.languages[row]
+        if pickerView == categoriesPickerView { return viewModel.categories[row]} else if pickerView == languagesPickerView { let language = viewModel.languages[row]
             return viewModel.displayLanguage[language]
         }
         return ""

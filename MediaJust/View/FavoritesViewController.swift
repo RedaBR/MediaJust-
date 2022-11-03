@@ -37,12 +37,11 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let list = favList
         var cell = UITableViewCell()
-        if let customCell = list?.dequeueReusableCell(withIdentifier: "CustomFav") as? CustomFavTableViewCell{
+        if let customCell = list?.dequeueReusableCell(withIdentifier: "CustomFav") as? CustomFavTableViewCell {
             let result = backUpList[indexPath.row]
             customCell.title.text = result.title
             cell = customCell
         }
-      
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

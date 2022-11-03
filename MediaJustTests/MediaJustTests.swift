@@ -67,6 +67,4 @@ let media = MediaService(session: URLSessionFake(data: FakeResponseData().correc
             XCTAssertNil(error)
         }
     }
-    
-
 }

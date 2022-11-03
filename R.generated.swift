@@ -151,12 +151,31 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
     struct localizable {
+      /// en translation: Choose a languages
+      ///
+      /// Locales: en, fr
+      static let languages = Rswift.StringResource(key: "languages", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "fr"], comment: nil)
       /// en translation: Choose your categories
       ///
       /// Locales: en, fr
       static let categories = Rswift.StringResource(key: "categories", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "fr"], comment: nil)
+
+      /// en translation: Choose a languages
+      ///
+      /// Locales: en, fr
+      static func languages(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("languages", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "languages"
+        }
+
+        return NSLocalizedString("languages", bundle: bundle, comment: "")
+      }
 
       /// en translation: Choose your categories
       ///
@@ -249,8 +268,8 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "delete.right") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'delete.right' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "heart") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'heart' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "heart.fill") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'heart.fill' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().descriptionID() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'descriptionID' could not be loaded from storyboard 'Main' as 'DescriptionViewController'.") }

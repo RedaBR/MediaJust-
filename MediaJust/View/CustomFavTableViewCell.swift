@@ -10,9 +10,7 @@ import UIKit
 class CustomFavTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var viewCellFav: UIView!
-    
     override func awakeFromNib() {
        super.awakeFromNib()
        addShadow()

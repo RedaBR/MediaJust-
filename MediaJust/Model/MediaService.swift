@@ -31,10 +31,8 @@ class MediaService {
             DispatchQueue.main.async {
                 if let data = data, error == nil {
            do { let responseJson = try JSONDecoder().decode(MediaInfos.self, from: data)
-            callBack(responseJson, true, nil)
-            }
-                    catch {callBack(nil, false, error)}
-                                                  }
+            callBack(responseJson, true, nil) } catch {callBack(nil, false, error)}
+                }
             }
         }
         // execute task

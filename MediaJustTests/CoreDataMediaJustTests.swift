@@ -15,12 +15,8 @@ class CoreDataMediaJustTests: XCTestCase {
 // Given
         let properties = Article(context: CoreDataStack.sharedInstance.viewContext)
         properties.title = "toto"
-        do {
 // When
-        try MockCoreData().lazyManagedObjectContext.save()
-            }
-        catch {
-        }
+        do { try MockCoreData().lazyManagedObjectContext.save()} catch { }
         CoreDataStack.sharedInstance.getProperties { (media) in
 // Then
             XCTAssertEqual(media.count>0, properties.title == "toto")
@@ -32,12 +28,8 @@ class CoreDataMediaJustTests: XCTestCase {
         let properties = Article(context: CoreDataStack.sharedInstance.viewContext)
         properties.title = "toto"
         var object = Article()
-        do {
-// When
-            try MockCoreData().lazyManagedObjectContext.save()
-        }
-        catch {
-        }
+        // When
+        do { try MockCoreData().lazyManagedObjectContext.save()} catch { }
         CoreDataStack.sharedInstance.getPropertieWithTitle(title: properties.title!) { (media) in
             object = media.first!
             CoreDataStack.sharedInstance.delete(articleToDelete: object)

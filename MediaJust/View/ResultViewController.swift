@@ -14,8 +14,6 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         resultList.delegate = self
         resultList.dataSource = self
-        //resultList.separatorStyle = .none
-        
     }
     var descript = DescriptionViewController()
     var resultViewModel = ResultViewModel.shared
