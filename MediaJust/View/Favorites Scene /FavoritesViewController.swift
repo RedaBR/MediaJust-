@@ -11,8 +11,6 @@ class FavoritesViewController: UIViewController {
     @IBOutlet weak var favList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        backUpList.removeAll()
-
         favList.delegate = self
         favList.dataSource = self
     }
@@ -30,7 +28,6 @@ class FavoritesViewController: UIViewController {
             favList.reloadData()
         }
     }
-    
     func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
