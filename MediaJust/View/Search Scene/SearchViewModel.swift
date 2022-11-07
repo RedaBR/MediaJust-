@@ -12,9 +12,8 @@ protocol SearchViewDelegate: AnyObject {
 }
 // MARK: - Search view model
 class SearchViewModel {
-// instantiate protocol
+    // instantiate protocol
     weak var delegate: SearchViewDelegate?
-// objects for picker view
     var categories = ["general",
                       "business",
                       "entertainment",
@@ -27,7 +26,7 @@ class SearchViewModel {
     var categorySelected = ""
     var languageSelected = ""
     var keyWord = ""
-//    function for call network and if success call a method of protocol
+    // function for call network and if success call a method of protocol
     func getResult () {
         MediaService.shared.getMedia(categories: categorySelected, languages: languageSelected, keyWords: keyWord) { [self] (info, success, _) in
             if success {

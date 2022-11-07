@@ -13,9 +13,8 @@ class ResultViewModel {
 // Variable for customise result
     var titleModel = ""
     var urlModel = ""
-// Pattern singleton
+
     static let shared = ResultViewModel()
-// Clean the list before adding the new result
     func clearList () {
         listResult.removeAll()
     }

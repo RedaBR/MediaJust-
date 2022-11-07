@@ -108,6 +108,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D40458429191A260026EAF0 /* Favorites Scene  */ = {
+			isa = PBXGroup;
+			children = (
+				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
+				9DF5A63028E39DB0006298CB /* CustomFavTableViewCell.swift */,
+			);
+			path = "Favorites Scene ";
+			sourceTree = "<group>";
+		};
+		9D40458529191AA90026EAF0 /* Search Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
+				9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */,
+			);
+			path = "Search Scene";
+			sourceTree = "<group>";
+		};
+		9D40458629191B280026EAF0 /* Result Scene  */ = {
+			isa = PBXGroup;
+			children = (
+				9DC6655428DC94CE0047D135 /* ResultViewController.swift */,
+				9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */,
+				9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */,
+			);
+			path = "Result Scene ";
+			sourceTree = "<group>";
+		};
+		9D40458729191B520026EAF0 /* Description Scene  */ = {
+			isa = PBXGroup;
+			children = (
+				9DE2096D28DF5BE600B53D70 /* DescriptionViewController.swift */,
+			);
+			path = "Description Scene ";
+			sourceTree = "<group>";
+		};
+		9D40458829191B940026EAF0 /* Favorites Description Scene  */ = {
+			isa = PBXGroup;
+			children = (
+				9DDB538328E97D2D005E9DC2 /* FavDescriptionViewController.swift */,
+			);
+			path = "Favorites Description Scene ";
+			sourceTree = "<group>";
+		};
 		9DA477772873AD6B005790D1 = {
 			isa = PBXGroup;
 			children = (
@@ -162,15 +206,11 @@
 		9DA477CF2873AEB4005790D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9DA477C22873AE6E005790D1 /* SearchViewController.swift */,
-				9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */,
-				9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */,
-				9DF5A63028E39DB0006298CB /* CustomFavTableViewCell.swift */,
-				9DC6655428DC94CE0047D135 /* ResultViewController.swift */,
-				9DC6655828DC9E2B0047D135 /* ResultViewModel.swift */,
-				9DC6655C28DCA1E20047D135 /* CustomTableViewCell.swift */,
-				9DE2096D28DF5BE600B53D70 /* DescriptionViewController.swift */,
-				9DDB538328E97D2D005E9DC2 /* FavDescriptionViewController.swift */,
+				9D40458529191AA90026EAF0 /* Search Scene */,
+				9D40458629191B280026EAF0 /* Result Scene  */,
+				9D40458729191B520026EAF0 /* Description Scene  */,
+				9D40458429191A260026EAF0 /* Favorites Scene  */,
+				9D40458829191B940026EAF0 /* Favorites Description Scene  */,
 			);
 			path = View;
 			sourceTree = "<group>";

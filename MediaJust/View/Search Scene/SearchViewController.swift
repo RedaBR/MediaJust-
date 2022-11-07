@@ -6,14 +6,14 @@
 //
 
 import UIKit
-// MARK: - Search
-class SearchViewController: UIViewController, UITextFieldDelegate {
-// Outlets
+
+class SearchViewController: UIViewController {
+
     @IBOutlet weak var categoriesTitle: UILabel!
     @IBOutlet weak var languagesTitle: UILabel!
+    @IBOutlet weak var keywordsTitle: UILabel!
     @IBOutlet weak var categoriesPickerView: UIPickerView!
     @IBOutlet weak var languagesPickerView: UIPickerView!
-
     @IBOutlet weak var keyWords: UITextField!
     @IBOutlet weak var viewLanguages: UIView!
     @IBAction func searchButton(_ sender: UIButton) {
@@ -23,13 +23,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
 // Method view model for call network
         viewModel.getResult()
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
     override func viewDidLoad() {
         categoriesTitle.text = R.string.localizable.categories()
         languagesTitle.text = R.string.localizable.languages()
+        keywordsTitle.text = R.string.localizable.keywords()
         super.viewDidLoad()
         keyWords.delegate = self
         viewModel.delegate = self
@@ -44,15 +41,23 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
     }
 }
+// MARK: - UItext Field Delegate
+extension SearchViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+}
 // MARK: - Protocol SearchViewDelegate for communicate with model
 extension SearchViewController: SearchViewDelegate {
-// Protocol method implementation
+
     func didReceivResult(infos: MediaInfos) {
-// Asynchronous functions in threads
+
         DispatchQueue.main.async { [self] in
             resultViewModel.clearList()
             self.resultViewModel.addResult(result: infos)
-// Instantiate ResultViewController for pushing
+
             let vCtrlResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewID") as? ResultViewController
             self.navigationController?.pushViewController(vCtrlResult!, animated: true)
         }
@@ -60,7 +65,7 @@ extension SearchViewController: SearchViewDelegate {
 }
 
 // MARK: - Cunstomise pickerView
-extension SearchViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension SearchViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -78,6 +83,9 @@ extension SearchViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         }
         return ""
     }
+}
+// MARK: - PickerView did select
+extension SearchViewController :  UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == categoriesPickerView {
             let categorieText = viewModel.categories[row]

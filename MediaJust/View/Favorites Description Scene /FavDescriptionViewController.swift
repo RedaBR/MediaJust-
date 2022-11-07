@@ -13,9 +13,9 @@ class FavDescriptionViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var titleFavDescript: UILabel!
     @IBOutlet weak var webViewFavDescript: WKWebView!
     @IBAction func deleteFav(_ sender: UIButton) {
+    sender.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
        deleteFavorites()
         CoreDataStack.sharedInstance.delete(articleToDelete: article)
-        sender.imageView?.image = UIImage(named: "heart")
     }
     let properties = ResultViewModel.shared
     var article = Article()

@@ -11,13 +11,15 @@ class FavoritesViewController: UIViewController {
     @IBOutlet weak var favList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backUpList.removeAll()
+
         favList.delegate = self
         favList.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        backUpList.removeAll()
-        getFetch()
+            backUpList.removeAll()
+            getFetch()
     }
 //    list of entities Core Data for custom cell
     var backUpList: [Article] = []
@@ -28,9 +30,17 @@ class FavoritesViewController: UIViewController {
             favList.reloadData()
         }
     }
+    
+    func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
-extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
+extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return backUpList.count
     }
@@ -44,6 +54,8 @@ extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
+}
+extension FavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let result = backUpList[indexPath.row]
         let vCtrlFav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FavListID") as?FavDescriptionViewController

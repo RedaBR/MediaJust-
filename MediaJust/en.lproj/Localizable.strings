@@ -7,3 +7,5 @@
 */
 "categories" = "Choose your categories";
 "languages" = "Choose a languages";
+"alertFav" = "Already in favorites";
+"keywords" = "Add a keyword";

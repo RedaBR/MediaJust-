@@ -13,10 +13,20 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var viewTitle: UIView!
     var isFav = false
+    let properties = ResultViewModel.shared
+    var duplicateObject = Article()
     @IBAction func buttonFav(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
         // Verifiate if articl already in fav
             if isFav == true {
-            presentAlert(with: "Already in favorites")
+                presentAlert(with:R.string.localizable.alertFav())
+                CoreDataStack.sharedInstance.getPropertieWithTitle(title: properties.titleModel) { (duplicateItem) in
+                    if duplicateItem.count > 0 {
+                        duplicateObject = duplicateItem.first!
+                        CoreDataStack.sharedInstance.delete(articleToDelete: duplicateObject)
+                    }
+                 
+                }
             }
         // Instantiate Article for init viewContext
             let article = Article(context: CoreDataStack.sharedInstance.viewContext)
@@ -29,9 +39,7 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
             } catch {
                 presentAlert(with: error.localizedDescription)
             }
-        sender.imageView?.image = UIImage(named: "heart.fill")
     }
-    let properties = ResultViewModel.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         self.webView.uiDelegate = self
