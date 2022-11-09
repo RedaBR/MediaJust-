@@ -164,6 +164,10 @@
                                     <outlet property="delegate" destination="0gi-pR-YYh" id="mwF-7O-4d8"/>
                                 </connections>
                             </pickerView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CTB-kr-Egx">
+                                <rect key="frame" x="0.0" y="783" width="428" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add keywords" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-T5-v5u">
                                 <rect key="frame" x="0.0" y="655" width="428" height="50"/>
                                 <color key="backgroundColor" red="0.2264743035" green="0.77851869709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,6 +246,7 @@
                     <navigationItem key="navigationItem" id="OXY-bT-Ecq"/>
                     <connections>
                         <outlet property="KeyWords" destination="Cv7-qI-rI2" id="NRv-aM-EUr"/>
+                        <outlet property="activityIndicator" destination="CTB-kr-Egx" id="G3L-yV-Sld"/>
                         <outlet property="categoriesPickerView" destination="G5j-Tp-e5b" id="gCK-fG-tvX"/>
                         <outlet property="categoriesTitle" destination="ioj-VK-9LN" id="GQw-Ow-IO7"/>
                         <outlet property="keywordsTitle" destination="hrc-T5-v5u" id="Ir5-IS-fj8"/>

@@ -22,7 +22,7 @@ class SearchViewModel {
                       "sports",
                       "technology"]
     var languages = ["fr", "en", "es", "pt", "it", "de", "ar"]
-    var displayLanguage = ["fr": "French", "en": "English", "es": "Espagnol", "pt": "Portugues", "it": "Italian", "de": "Deutsch", "ar": "Arabe"]
+    var displayLanguage = ["fr": R.string.localizable.french(), "en":  R.string.localizable.english(), "es":  R.string.localizable.espagnol(), "pt":  R.string.localizable.portugues(), "it":  R.string.localizable.italian(), "de":  R.string.localizable.deutsch(), "ar": R.string.localizable.arabe()]
     var categorySelected = ""
     var languageSelected = ""
     var keyWord = ""

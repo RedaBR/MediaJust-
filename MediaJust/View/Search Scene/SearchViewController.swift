@@ -16,12 +16,18 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var languagesPickerView: UIPickerView!
     @IBOutlet weak var keyWords: UITextField!
     @IBOutlet weak var viewLanguages: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func searchButton(_ sender: UIButton) {
+        button = sender
+        sender.isHidden = true
+        activityIndicator.isHidden = false
         if let text = keyWords.text {
             viewModel.keyWord = text
         }
 // Method view model for call network
         viewModel.getResult()
+        
+      
     }
     override func viewDidLoad() {
         categoriesTitle.text = R.string.localizable.categories()
@@ -30,8 +36,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         keyWords.delegate = self
         viewModel.delegate = self
-
     }
+    var button = UIButton()
     var viewModel = SearchViewModel()
     var resultViewModel = ResultViewModel.shared
     func presentAlert(with error: String) {
@@ -57,8 +63,8 @@ extension SearchViewController: SearchViewDelegate {
         DispatchQueue.main.async { [self] in
             resultViewModel.clearList()
             self.resultViewModel.addResult(result: infos)
-
             let vCtrlResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewID") as? ResultViewController
+            button.isHidden = false 
             self.navigationController?.pushViewController(vCtrlResult!, animated: true)
         }
     }
