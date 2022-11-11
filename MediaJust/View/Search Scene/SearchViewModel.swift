@@ -9,6 +9,7 @@ import Foundation
 // MARK: - Protocol SearchViewDelegate
 protocol SearchViewDelegate: AnyObject {
     func didReceivResult (infos: MediaInfos)
+    func presentAlert ()
 }
 // MARK: - Search view model
 class SearchViewModel {
@@ -32,6 +33,7 @@ class SearchViewModel {
             if success {
                 delegate?.didReceivResult(infos: info!)
             } else {
+                delegate?.presentAlert()
             }
         }
     }

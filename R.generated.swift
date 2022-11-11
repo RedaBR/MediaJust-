@@ -151,7 +151,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
     struct localizable {
       /// en translation:  Arabic
       ///
@@ -193,6 +193,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, fr
       static let italian = Rswift.StringResource(key: "Italian", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "fr"], comment: nil)
+      /// en translation: Please check the quality of your network
+      ///
+      /// Locales: en, fr
+      static let netwotkAlert = Rswift.StringResource(key: "netwotkAlert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "fr"], comment: nil)
       /// en translation: Portugues
       ///
       /// Locales: en, fr
@@ -346,6 +350,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Italian", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please check the quality of your network
+      ///
+      /// Locales: en, fr
+      static func netwotkAlert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("netwotkAlert", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "netwotkAlert"
+        }
+
+        return NSLocalizedString("netwotkAlert", bundle: bundle, comment: "")
       }
 
       /// en translation: Portugues

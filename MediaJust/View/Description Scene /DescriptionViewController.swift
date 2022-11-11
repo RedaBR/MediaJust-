@@ -20,13 +20,7 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
         // Verifiate if articl already in fav
             if isFav == true {
                 presentAlert(with:R.string.localizable.alertFav())
-                CoreDataStack.sharedInstance.getPropertieWithTitle(title: properties.titleModel) { (duplicateItem) in
-                    if duplicateItem.count > 0 {
-                        duplicateObject = duplicateItem.first!
-                        CoreDataStack.sharedInstance.delete(articleToDelete: duplicateObject)
-                    }
-                 
-                }
+                return
             }
         // Instantiate Article for init viewContext
             let article = Article(context: CoreDataStack.sharedInstance.viewContext)
@@ -54,6 +48,11 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
         viewTitle.layer.shadowRadius = 2.0
         viewTitle.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         viewTitle.layer.shadowOpacity = 2.0
+        CoreDataStack.sharedInstance.getPropertieWithTitle(title: titl.text!) { (duplicateItem) in
+            if duplicateItem.count > 0 {
+                isFav = true
+            }
+        }
     }
     func presentAlert(with error: String) {
         let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)

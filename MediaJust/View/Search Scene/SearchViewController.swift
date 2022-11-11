@@ -26,8 +26,6 @@ class SearchViewController: UIViewController {
         }
 // Method view model for call network
         viewModel.getResult()
-        
-      
     }
     override func viewDidLoad() {
         categoriesTitle.text = R.string.localizable.categories()
@@ -57,16 +55,19 @@ extension SearchViewController : UITextFieldDelegate {
 }
 // MARK: - Protocol SearchViewDelegate for communicate with model
 extension SearchViewController: SearchViewDelegate {
-
+    func presentAlert() {
+        presentAlert(with: R.string.localizable.netwotkAlert())
+    }
     func didReceivResult(infos: MediaInfos) {
 
         DispatchQueue.main.async { [self] in
             resultViewModel.clearList()
             self.resultViewModel.addResult(result: infos)
             let vCtrlResult = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultViewID") as? ResultViewController
-            button.isHidden = false 
+            button.isHidden = false
             self.navigationController?.pushViewController(vCtrlResult!, animated: true)
         }
+
     }
 }
 

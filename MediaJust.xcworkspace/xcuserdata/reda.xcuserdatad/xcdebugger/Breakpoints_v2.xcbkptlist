@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "340613EA-F935-40BD-950C-051831098A58"
+            uuid = "4291890F-FFE5-40BF-829D-1DDF40CE5C46"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MediaJust/View/Search Scene/SearchViewController.swift"
+            filePath = "MediaJust/View/Description Scene /DescriptionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "searchButton(_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "buttonFav(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
