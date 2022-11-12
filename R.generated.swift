@@ -155,8 +155,8 @@ struct R: Rswift.Validatable {
     struct localizable {
       /// en translation:  Arabic
       ///
-      /// Locales: en
-      static let arabe = Rswift.StringResource(key: "Arabe", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, fr
+      static let arabic = Rswift.StringResource(key: "Arabic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "fr"], comment: nil)
       /// en translation: Add a keyword
       ///
       /// Locales: en, fr
@@ -204,17 +204,17 @@ struct R: Rswift.Validatable {
 
       /// en translation:  Arabic
       ///
-      /// Locales: en
-      static func arabe(preferredLanguages: [String]? = nil) -> String {
+      /// Locales: en, fr
+      static func arabic(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Arabe", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("Arabic", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Arabe"
+          return "Arabic"
         }
 
-        return NSLocalizedString("Arabe", bundle: bundle, comment: "")
+        return NSLocalizedString("Arabic", bundle: bundle, comment: "")
       }
 
       /// en translation: Add a keyword
