@@ -14,5 +14,5 @@ jobs:
       - name: testing ... iPhone 12 Pro Max
         run: >-
           xcodebuild test -workspace MediaJust.xcodeproj/project.xcworkspace
-          -scheme MediaJust -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.4'
+          -scheme MediaJust -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=16.0'
 
