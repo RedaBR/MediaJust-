@@ -13,6 +13,6 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: testing ... iPhone 12 Pro Max
         run: >-
-          xcodebuild test -workspace MediaJust.xcodeproj/MediaJust.xcworkspace
+          xcodebuild test -workspace MediaJust.xcodeproj/project.xcworkspace
           -scheme MediaJust -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.4'
 
