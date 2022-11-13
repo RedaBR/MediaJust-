@@ -28,9 +28,9 @@ class SearchViewController: UIViewController {
         viewModel.getResult()
     }
     override func viewDidLoad() {
-        categoriesTitle.text = R.string.localizable.categories()
-        languagesTitle.text = R.string.localizable.languages()
-        keywordsTitle.text = R.string.localizable.keywords()
+        categoriesTitle.text = NSLocalizedString("categories", comment: "")
+        languagesTitle.text = NSLocalizedString("languages", comment: "")
+        keywordsTitle.text = NSLocalizedString("keywords", comment: "")
         super.viewDidLoad()
         keyWords.delegate = self
         viewModel.delegate = self
@@ -56,7 +56,7 @@ extension SearchViewController : UITextFieldDelegate {
 // MARK: - Protocol SearchViewDelegate for communicate with model
 extension SearchViewController: SearchViewDelegate {
     func presentAlert() {
-        presentAlert(with: R.string.localizable.netwotkAlert())
+        presentAlert(with:NSLocalizedString("networkAlert", comment: ""))
     }
     func didReceivResult(infos: MediaInfos) {
 

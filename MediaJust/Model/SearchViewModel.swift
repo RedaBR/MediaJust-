@@ -23,7 +23,7 @@ class SearchViewModel {
                       "sports",
                       "technology"]
     var languages = ["fr", "en", "es", "pt", "it", "de", "ar"]
-    var displayLanguage = ["fr": R.string.localizable.french(), "en":  R.string.localizable.english(), "es":  R.string.localizable.espagnol(), "pt":  R.string.localizable.portugues(), "it":  R.string.localizable.italian(), "de":  R.string.localizable.deutsch(), "ar": R.string.localizable.arabic()]
+    var displayLanguage = ["fr": NSLocalizedString("French", comment: ""), "en":  NSLocalizedString("English", comment: ""), "es":NSLocalizedString("Espagnol", comment: ""), "pt":  NSLocalizedString("Portugues", comment: ""), "it":  NSLocalizedString("Italian", comment: ""), "de":  NSLocalizedString("Deutsch", comment: ""), "ar":NSLocalizedString("Arabic", comment: "")]
     var categorySelected = ""
     var languageSelected = ""
     var keyWord = ""

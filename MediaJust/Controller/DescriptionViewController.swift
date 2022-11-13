@@ -19,7 +19,7 @@ class DescriptionViewController: UIViewController, WKUIDelegate {
         sender.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
         // Verifiate if articl already in fav
             if isFav == true {
-                presentAlert(with:R.string.localizable.alertFav())
+                presentAlert(with:NSLocalizedString("alertFav", comment: ""))
                 return
             }
         // Instantiate Article for init viewContext

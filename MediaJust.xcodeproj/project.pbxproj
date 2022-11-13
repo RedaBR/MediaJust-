@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,6 @@
 		9DA4779E2873AD76005790D1 /* MediaJustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA4779D2873AD76005790D1 /* MediaJustTests.swift */; };
 		9DA477C32873AE6E005790D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477C22873AE6E005790D1 /* SearchViewController.swift */; };
 		9DA477CC2873AE94005790D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */; };
-		9DBFAB1F2913143F007CC1DF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBFAB1E2913143F007CC1DF /* R.generated.swift */; };
 		9DBFAB3D29131FEA007CC1DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DBFAB3F29131FEA007CC1DF /* Localizable.strings */; };
 		9DC2036C28D3CD8F008F8347 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2036B28D3CD8F008F8347 /* SearchViewModel.swift */; };
 		9DC6655528DC94CE0047D135 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6655428DC94CE0047D135 /* ResultViewController.swift */; };
@@ -69,7 +68,6 @@
 		9DA477C22873AE6E005790D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9DA477CB2873AE94005790D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		9DB0CD45291272450036618A /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
-		9DBFAB1E2913143F007CC1DF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		9DBFAB3729131FC9007CC1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DBFAB3829131FCA007CC1DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DBFAB3E29131FEA007CC1DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				9DC4EF1C291F1109008214A8 /* View */,
 				9DA477CF2873AEB4005790D1 /* Controller */,
 				9DA477942873AD76005790D1 /* Info.plist */,
-				9DBFAB1E2913143F007CC1DF /* R.generated.swift */,
 				9DBFAB3F29131FEA007CC1DF /* Localizable.strings */,
 			);
 			path = MediaJust;
@@ -233,12 +230,10 @@
 			buildConfigurationList = 9DA477AD2873AD76005790D1 /* Build configuration list for PBXNativeTarget "MediaJust" */;
 			buildPhases = (
 				617FD40A3B76786577FD1653 /* [CP] Check Pods Manifest.lock */,
-				9D6B3F52291156100036F028 /* ShellScript */,
 				9D95885A2907D6CA0026B7BD /* Run Script */,
 				9DA4777C2873AD6B005790D1 /* Sources */,
 				9DA4777D2873AD6B005790D1 /* Frameworks */,
 				9DA4777E2873AD6B005790D1 /* Resources */,
-				5C0547A341EBB554C504B96D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,23 +323,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C0547A341EBB554C504B96D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MediaJust/Pods-MediaJust-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MediaJust/Pods-MediaJust-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediaJust/Pods-MediaJust-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		617FD40A3B76786577FD1653 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,25 +344,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		9D6B3F52291156100036F028 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		9D95885A2907D6CA0026B7BD /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -422,7 +381,6 @@
 				9DEEDA9C28E38957000F636C /* CoreDataStack.swift in Sources */,
 				9DA477C32873AE6E005790D1 /* SearchViewController.swift in Sources */,
 				9DA477CC2873AE94005790D1 /* FavoritesViewController.swift in Sources */,
-				9DBFAB1F2913143F007CC1DF /* R.generated.swift in Sources */,
 				9DE2096E28DF5BE600B53D70 /* DescriptionViewController.swift in Sources */,
 				9DC6655528DC94CE0047D135 /* ResultViewController.swift in Sources */,
 				9DEEDA9828E3888C000F636C /* MediaJust.xcdatamodeld in Sources */,
