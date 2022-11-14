@@ -9,5 +9,11 @@ target 'MediaJust' do
 
 	pod 'SwiftLint'
 	
+  # Add the Firebase pod for Google Analytics
+  pod 'FirebaseAnalytics'
+
+  # For Analytics without IDFA collection capability, use this pod instead
+  # pod ‘Firebase/AnalyticsWithoutAdIdSupport’
+
 
 end
